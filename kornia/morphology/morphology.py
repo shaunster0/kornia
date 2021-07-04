@@ -141,7 +141,7 @@ def erosion(
     # pad
     pad_e: List[int] = [origin[1], se_w - origin[1] - 1, origin[0], se_h - origin[0] - 1]
     if border_type == 'geodesic':
-        border_value = max_val
+        border_value = 0
         border_type = 'constant'
     output: torch.Tensor = F.pad(tensor, pad_e, mode=border_type, value=border_value)
 
